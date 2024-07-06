@@ -593,7 +593,7 @@ function OpenEmployeeList(society, options)
 				local elements2 = {
 					{unselectable = true, icon = "fas fa-user", title = element.title},
 					{icon = "fas fa-user", title = "Promouvoir", value = "promote"},
-					{icon = "fas fa-user", title = "ViIrer", value = "fire"},
+					{icon = "fas fa-user", title = "Virer", value = "fire"},
 					{icon = "fas fa-arrow-left", title = "Retour", value = "return"}
 				}
 				ESX.OpenContext("right", elements2, function(menu2,element2)
