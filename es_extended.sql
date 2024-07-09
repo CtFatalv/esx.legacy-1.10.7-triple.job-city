@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : sam. 16 sep. 2023 à 10:22
--- Version du serveur : 10.11.5-MariaDB-1:10.11.5+maria~ubu2204
--- Version de PHP : 8.1.23
+-- Généré le : mar. 09 juil. 2024 à 23:09
+-- Version du serveur : 10.11.8-MariaDB-ubu2204
+-- Version de PHP : 8.1.29
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -587,36 +587,36 @@ CREATE TABLE `multicharacter_slots` (
 --
 
 CREATE TABLE `owned_shops` (
+  `id` int(11) NOT NULL,
   `identifier` varchar(46) DEFAULT NULL,
-  `ShopNumber` int(11) NOT NULL,
-  `ShopName` varchar(30) DEFAULT NULL
+  `ShopName` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Déchargement des données de la table `owned_shops`
 --
 
-INSERT INTO `owned_shops` (`identifier`, `ShopNumber`, `ShopName`) VALUES
-('0', 1, '0'),
-('0', 2, '0'),
-('0', 3, '0'),
-('0', 4, '0'),
-('0', 5, '0'),
-('0', 6, '0'),
-('0', 7, '0'),
-('0', 8, '0'),
-('0', 9, '0'),
-('0', 10, '0'),
-('0', 11, '0'),
-('0', 12, '0'),
-('0', 13, '0'),
-('0', 14, '0'),
-('0', 15, '0'),
-('0', 16, '0'),
-('0', 17, '0'),
-('0', 18, '0'),
-('0', 19, '0'),
-('0', 20, '0');
+INSERT INTO `owned_shops` (`id`, `identifier`, `ShopName`) VALUES
+(1, '0', 'shop01'),
+(2, '0', 'shop02'),
+(3, '0', 'shop03'),
+(4, '0', 'shop04'),
+(5, '0', 'shop05'),
+(6, '0', 'shop06'),
+(7, '0', 'shop07'),
+(8, '0', 'shop08'),
+(9, '0', 'shop09'),
+(10, '0', 'shop10'),
+(11, '0', 'shop11'),
+(12, '0', 'shop12'),
+(13, '0', 'shop13'),
+(14, '0', 'shop14'),
+(15, '0', 'shop15'),
+(16, '0', 'shop16'),
+(17, '0', 'shop17'),
+(18, '0', 'shop18'),
+(19, '0', 'shop19'),
+(20, '0', 'shop20');
 
 -- --------------------------------------------------------
 
@@ -1236,7 +1236,7 @@ ALTER TABLE `multicharacter_slots`
 -- Index pour la table `owned_shops`
 --
 ALTER TABLE `owned_shops`
-  ADD PRIMARY KEY (`ShopNumber`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `owned_vehicles`
@@ -1388,6 +1388,12 @@ ALTER TABLE `fine_types`
 --
 ALTER TABLE `job_grades`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=89;
+
+--
+-- AUTO_INCREMENT pour la table `owned_shops`
+--
+ALTER TABLE `owned_shops`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT pour la table `ox_doorlock`
