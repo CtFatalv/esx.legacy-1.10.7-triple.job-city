@@ -8,8 +8,8 @@ Config.MultiServerSync   = false   --This will check if a ban is add in the sql 
 
 --WEBHOOK
 Config.EnableDiscordLink = true --Logs Discord
-Config.webhookban        = "https://discord.com/api/webhooks/1233112828718747719/WGsQesHsXaSZkIfLp1SKPs_CZiSjpZMQXkz3uhNCUdSdXJaNsjwfhqd44dOOsHDdp5ug"
-Config.webhookunban      = "https://discord.com/api/webhooks/1233112828718747719/WGsQesHsXaSZkIfLp1SKPs_CZiSjpZMQXkz3uhNCUdSdXJaNsjwfhqd44dOOsHDdp5ug"
+Config.webhookban        = ""
+Config.webhookunban      = ""
 
 
 --LANGUAGE
