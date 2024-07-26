@@ -88,5 +88,19 @@ Config.TPZones = {
         destination = 'labo_cokeout',
         ShellWeatherSync = false,
     },
+    ['arena_1'] = {
+        label = "Arena Entrée",
+        icon = 'fas fa-dice',
+        pos = vector4(2844.92, -3920.07, 140.00, 180.11),
+        destination = 'arena_2',
+        ShellWeatherSync = false,
+    },
+    ['arena_2'] = {
+        label = "Arena Sortie",
+        icon = 'fas fa-dice',
+        pos = vector4(-282.53, -2031.51, 30.15, 116.11),
+        destination = 'arena_1',
+        ShellWeatherSync = false,
+    },
     
 }
