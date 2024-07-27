@@ -580,6 +580,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "handcuff",
 		icon = Config.handcuff_img,
+		items = 'menotte',
+		anyItem = true,
 		label = "Menotter",
 		num = 2,
         groups = {
@@ -590,6 +592,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "unhandcuff",
 		icon = Config.handcuff_img,
+		items = 'clemeotte',
+		anyItem = true,
 		label = "Démenotter",
 		num = 3,
         groups = {
@@ -611,16 +615,6 @@ exports.ox_target:addGlobalPlayer({
 		event = "esx_policejob:voirlicence",
 		icon = Config.licence_img,
 		label = 'Voir les licences',
-		num = 8,
-        groups = {
-			['police'] = 1
-		},
-        distance = 0.7
-	},
-	{
-		event = "billing",
-		icon = Config.billing_img,
-		label = Config.billing,
 		num = 8,
         groups = {
 			['police'] = 1
@@ -651,6 +645,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "ambulance:reanimation",
 		icon = Config.search_img,
+		items = 'medikit',
+		anyItem = true,
 		label = 'Réanimer le patient',
 		num = 1,
         groups = {
@@ -661,6 +657,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "ambulance:soinleger",
 		icon = Config.search_img,
+		items = 'bandage',
+		anyItem = true,
 		label = 'Soigner petites blessures',
 		num = 2,
         groups = {
@@ -671,6 +669,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "ambulance:soingrave",
 		icon = Config.search_img,
+		items = 'medikit',
+		anyItem = true,
 		label = 'Soigner blessures graves',
 		num = 3,
         groups = {
@@ -678,99 +678,76 @@ exports.ox_target:addGlobalPlayer({
 		},
         distance = 1.5
 	},
+-- All
 	{
-		event = "billing",
-		icon = Config.billing_img,
-		label = Config.billing,
-		num = 5,
-        groups = {
-			['ambulance'] = 0
-		},
-        distance = 1.5
+		event = "search",
+		icon = Config.search_img,
+		label = Config.search,
+		num = 1,
+		distance = 0.7
 	},
--- Mechanic
 	{
-		event = "billing",
-		icon = Config.billing_img,
-		label = Config.billing,
-		num = 5,
-        groups = {
-			['mechanic'] = 0
-		},
-        distance = 0.7
+		event = "escort",
+		icon = Config.escort_img,
+		label = Config.escort,
+		num = 4,
+		distance = 0.7
 	},
--- Concessionnaire
 	{
-		event = "billing",
-		icon = Config.billing_img,
-		label = Config.billing,
-		num = 5,
-        groups = {
-			['cardealer'] = 0
-		},
-        distance = 0.7
+		event = "cagoule",
+		icon = Config.search_img,
+		items = 'cagoule',
+		anyItem = true,
+		label = "cagoule",
+		num = 1,
+		distance = 0.7
 	},
--- Taxi
+	{
+		event = "uncagoule",
+		icon = Config.search_img,
+		label = "Enlever la cagoule",
+		num = 1,
+		distance = 0.7
+	},
+	{
+		event = "zip",
+		icon = Config.search_img,
+		items = 'zip',
+		anyItem = true,
+		label = "zip",
+		num = 2,
+		distance = 0.7
+	},
+	{
+		event = "unzip",
+		icon = Config.search_img,
+		label = "unzip",
+		num = 3,
+		distance = 0.7
+	},
+	{
+		event = "bunhandcuff",
+		items = 'lockpick',
+		anyItem = true,
+		icon = Config.handcuff_img,
+		label = "Casser les menottes",
+		num = 3,
+		distance = 0.7
+	},
+	-- Facturations	
 	{
 		event = "billing",
 		icon = Config.billing_img,
 		label = Config.billing,
-		num = 5,
         groups = {
+			['police'] = 0,
+			['ambulance'] = 0,
+			['mechanic'] = 0,
+			['cardealer'] = 0,
 			['taxi'] = 0
 		},
         distance = 0.7
 	},
-	-- All
-		{
-			event = "search",
-			icon = Config.search_img,
-			label = Config.search,
-			num = 1,
-			distance = 0.7
-		},
-		{
-			event = "escort",
-			icon = Config.escort_img,
-			label = Config.escort,
-			num = 4,
-			distance = 0.7
-		},
-		{
-			event = "cagoule",
-			icon = Config.search_img,
-			label = "cagoule",
-			num = 1,
-			distance = 0.7
-		},
-		{
-			event = "uncagoule",
-			icon = Config.search_img,
-			label = "Enlever la cagoule",
-			num = 1,
-			distance = 0.7
-		},
-		{
-			event = "zip",
-			icon = Config.search_img,
-			label = "zip",
-			num = 2,
-			distance = 0.7
-		},
-		{
-			event = "unzip",
-			icon = Config.search_img,
-			label = "unzip",
-			num = 3,
-			distance = 0.7
-		},
-        {
-            event = "bunhandcuff",
-            icon = Config.handcuff_img,
-            label = "Casser les menottes",
-            num = 3,
-            distance = 0.7
-        },
 })
 
 exports.ox_target:addGlobalVehicle({
@@ -781,7 +758,6 @@ exports.ox_target:addGlobalVehicle({
 		label = Config.outveh,
 		num = 1,
         groups = {
-			['police'] = 0
 		},
         distance = 1.5
 	},
@@ -797,6 +773,8 @@ exports.ox_target:addGlobalVehicle({
 	},
 	{
 		event = "esx_mechanicjob:crochetter",
+		items = 'chalumeau',
+		anyItem = true,
 		icon = Config.vehplate_img,
 		label = 'Déverouiller les portes',
 		num = 3,
@@ -828,6 +806,8 @@ exports.ox_target:addGlobalVehicle({
 	},
 	{
 		event = "esx_mechanicjob:reparation",
+		items = 'fixkit',
+		anyItem = true,
 		icon = Config.vehplate_img,
 		label = 'Réparer le véhicule',
 		num = 2,
@@ -849,6 +829,8 @@ exports.ox_target:addGlobalVehicle({
 	{
 		event = "esx_mechanicjob:crochetter",
 		icon = Config.vehplate_img,
+		items = 'chalumeau',
+		anyItem = true,
 		label = 'Crochetter le véhicule',
 		num = 4,
         groups = {
