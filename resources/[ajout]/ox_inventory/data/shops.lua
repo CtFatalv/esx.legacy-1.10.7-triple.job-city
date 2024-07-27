@@ -12,10 +12,7 @@
 
 return {
 	General = {
-		name = 'Epicerie Fine',		
-        blip = {
-			id = 402, colour = 69, scale = 2.7
-		},
+		name = 'Epicerie',
 		inventory = {
 			{ name = 'burger', price = 10 },
 			{ name = 'water', price = 10 },
@@ -36,7 +33,6 @@ return {
 			vec3(-2968.243, 390.910, 15.043),
 			vec3(1166.024, 2708.930, 38.157),
 			vec3(1392.562, 3604.684, 34.980),
-			vec3(-1393.409, -606.624, 30.319),
 			vec3(-47.240, -1757.630, 29.420),
 			vec3(-706.69, -913.69, 19.22),
 			vec3(1164.15, -322.9, 69.21),
