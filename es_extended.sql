@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mar. 09 juil. 2024 à 23:09
+-- Généré le : sam. 27 juil. 2024 à 22:13
 -- Version du serveur : 10.11.8-MariaDB-ubu2204
 -- Version de PHP : 8.1.29
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de données : `es_extended`
+-- Base de données : `s51_Mime`
 --
 
 -- --------------------------------------------------------
@@ -88,87 +88,6 @@ CREATE TABLE `addon_account_data` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `addon_inventory`
---
-
-CREATE TABLE `addon_inventory` (
-  `name` varchar(60) NOT NULL,
-  `label` varchar(100) NOT NULL,
-  `shared` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `addon_inventory`
---
-
-INSERT INTO `addon_inventory` (`name`, `label`, `shared`) VALUES
-('society_abatteur', 'Abatteur', 1),
-('society_agriculteur', 'Agriculteur', 1),
-('society_ambulance', 'EMS', 1),
-('society_bucheron', 'Bûcheron', 1),
-('society_cardealer', 'Cardealer', 1),
-('society_mechanic', 'Mechanic', 1),
-('society_mineur', 'Mineur', 1),
-('society_nightclub', 'Nightclub', 1),
-('society_police', 'Police', 1),
-('society_shop01', 'Shop01', 1),
-('society_shop02', 'Shop02', 1),
-('society_shop03', 'Shop03', 1),
-('society_shop04', 'Shop04', 1),
-('society_shop05', 'Shop05', 1),
-('society_shop06', 'Shop06', 1),
-('society_shop07', 'Shop07', 1),
-('society_shop08', 'Shop08', 1),
-('society_shop09', 'Shop09', 1),
-('society_shop10', 'Shop10', 1),
-('society_shop11', 'Shop11', 1),
-('society_shop12', 'Shop12', 1),
-('society_shop13', 'Shop13', 1),
-('society_shop14', 'Shop14', 1),
-('society_shop15', 'Shop15', 1),
-('society_shop16', 'Shop16', 1),
-('society_shop17', 'Shop17', 1),
-('society_shop18', 'Shop18', 1),
-('society_shop19', 'Shop19', 1),
-('society_shop20', 'Shop20', 1),
-('society_tailleur', 'Tailleur', 1),
-('society_taxi', 'Taxi', 1),
-('society_vigneron', 'Vigneron', 1);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `addon_inventory_items`
---
-
-CREATE TABLE `addon_inventory_items` (
-  `id` int(11) NOT NULL,
-  `inventory_name` varchar(100) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `count` int(11) NOT NULL,
-  `owner` varchar(46) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `baninfo`
---
-
-CREATE TABLE `baninfo` (
-  `id` int(11) NOT NULL,
-  `license` varchar(50) DEFAULT NULL,
-  `identifier` varchar(46) DEFAULT NULL,
-  `liveid` varchar(21) DEFAULT NULL,
-  `xblid` varchar(21) DEFAULT NULL,
-  `discord` varchar(30) DEFAULT NULL,
-  `playerip` varchar(25) DEFAULT NULL,
-  `playername` varchar(32) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `banking`
 --
 
@@ -184,50 +103,6 @@ CREATE TABLE `banking` (
 -- --------------------------------------------------------
 
 --
--- Structure de la table `banlist`
---
-
-CREATE TABLE `banlist` (
-  `license` varchar(50) NOT NULL,
-  `identifier` varchar(46) DEFAULT NULL,
-  `liveid` varchar(21) DEFAULT NULL,
-  `xblid` varchar(21) DEFAULT NULL,
-  `discord` varchar(30) DEFAULT NULL,
-  `playerip` varchar(25) DEFAULT NULL,
-  `targetplayername` varchar(32) DEFAULT NULL,
-  `sourceplayername` varchar(32) DEFAULT NULL,
-  `reason` varchar(255) NOT NULL,
-  `timeat` varchar(50) NOT NULL,
-  `expiration` varchar(50) NOT NULL,
-  `permanent` int(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `banlisthistory`
---
-
-CREATE TABLE `banlisthistory` (
-  `id` int(11) NOT NULL,
-  `license` varchar(50) DEFAULT NULL,
-  `identifier` varchar(46) DEFAULT NULL,
-  `liveid` varchar(21) DEFAULT NULL,
-  `xblid` varchar(21) DEFAULT NULL,
-  `discord` varchar(30) DEFAULT NULL,
-  `playerip` varchar(25) DEFAULT NULL,
-  `targetplayername` varchar(32) DEFAULT NULL,
-  `sourceplayername` varchar(32) DEFAULT NULL,
-  `reason` varchar(255) NOT NULL,
-  `timeat` int(11) NOT NULL,
-  `added` varchar(40) NOT NULL,
-  `expiration` int(11) NOT NULL,
-  `permanent` int(1) NOT NULL DEFAULT 0
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_bin;
-
--- --------------------------------------------------------
-
---
 -- Structure de la table `billing`
 --
 
@@ -239,74 +114,6 @@ CREATE TABLE `billing` (
   `target` varchar(40) NOT NULL,
   `label` varchar(255) NOT NULL,
   `amount` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `datastore`
---
-
-CREATE TABLE `datastore` (
-  `name` varchar(60) NOT NULL,
-  `label` varchar(100) NOT NULL,
-  `shared` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `datastore`
---
-
-INSERT INTO `datastore` (`name`, `label`, `shared`) VALUES
-('property', 'Property', 0),
-('society_abatteur', 'Abatteur', 1),
-('society_agriculteur', 'Agriculteur', 1),
-('society_ambulance', 'EMS', 1),
-('society_bucheron', 'Bûcheron', 1),
-('society_cardealer', 'Cardealer', 1),
-('society_mechanic', 'Mechanic', 1),
-('society_mineur', 'Mineur', 1),
-('society_nightclub', 'Nightclub', 1),
-('society_police', 'Police', 1),
-('society_shop01', 'Shop01', 1),
-('society_shop02', 'Shop02', 1),
-('society_shop03', 'Shop03', 1),
-('society_shop04', 'Shop04', 1),
-('society_shop05', 'Shop05', 1),
-('society_shop06', 'Shop06', 1),
-('society_shop07', 'Shop07', 1),
-('society_shop08', 'Shop08', 1),
-('society_shop09', 'Shop09', 1),
-('society_shop10', 'Shop10', 1),
-('society_shop11', 'Shop11', 1),
-('society_shop12', 'Shop12', 1),
-('society_shop13', 'Shop13', 1),
-('society_shop14', 'Shop14', 1),
-('society_shop15', 'Shop15', 1),
-('society_shop16', 'Shop16', 1),
-('society_shop17', 'Shop17', 1),
-('society_shop18', 'Shop18', 1),
-('society_shop19', 'Shop19', 1),
-('society_shop20', 'Shop20', 1),
-('society_tailleur', 'Tailleur', 1),
-('society_taxi', 'Taxi', 1),
-('society_vigneron', 'Vigneron', 1),
-('user_ears', 'Ears', 0),
-('user_glasses', 'Glasses', 0),
-('user_helmet', 'Helmet', 0),
-('user_mask', 'Mask', 0);
-
--- --------------------------------------------------------
-
---
--- Structure de la table `datastore_data`
---
-
-CREATE TABLE `datastore_data` (
-  `id` int(11) NOT NULL,
-  `name` varchar(60) NOT NULL,
-  `owner` varchar(46) DEFAULT NULL,
-  `data` longtext DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
@@ -625,6 +432,7 @@ INSERT INTO `owned_shops` (`id`, `identifier`, `ShopName`) VALUES
 --
 
 CREATE TABLE `owned_vehicles` (
+  `id` int(11) NOT NULL,
   `owner` varchar(46) DEFAULT NULL,
   `plate` varchar(12) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `vehicle` longtext CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -632,8 +440,6 @@ CREATE TABLE `owned_vehicles` (
   `job` varchar(20) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `stored` tinyint(1) DEFAULT NULL,
   `parking` varchar(60) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT 'SandyShores',
-  `peopleWithKeys` varchar(512) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT '[]',
-  `pound` varchar(60) DEFAULT NULL,
   `mileage` float DEFAULT 0,
   `glovebox` longtext DEFAULT NULL,
   `trunk` longtext DEFAULT NULL,
@@ -814,316 +620,6 @@ CREATE TABLE `user_licenses` (
   `owner` varchar(46) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
--- --------------------------------------------------------
-
---
--- Structure de la table `vehicles`
---
-
-CREATE TABLE `vehicles` (
-  `name` varchar(60) NOT NULL,
-  `model` varchar(60) NOT NULL,
-  `price` int(11) NOT NULL,
-  `category` varchar(60) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Déchargement des données de la table `vehicles`
---
-
-INSERT INTO `vehicles` (`name`, `model`, `price`, `category`) VALUES
-('17silvrb', '17silvrb', 25000, 'import'),
-('19sclass', '19sclass', 100000, 'import'),
-('206wrc', '206wrc', 20000, 'import'),
-('a90pit', 'a90pit', 100000, 'import'),
-('Adder', 'adder', 100000, 'super'),
-('aemsv450', 'AEMSV450', 15000, 'métier'),
-('Akuma', 'AKUMA', 8000, 'motorcycles'),
-('Alpha', 'alpha', 60000, 'sports'),
-('amarok', 'amarok', 60000, 'import'),
-('Ardent', 'ardent', 1150000, 'sportsclassics'),
-('Asea', 'asea', 5500, 'sedans'),
-('Autarch', 'autarch', 1955000, 'super'),
-('Avarus', 'avarus', 18000, 'motorcycles'),
-('aventador', 'aventador', 250000, 'import'),
-('Bagger', 'bagger', 13500, 'motorcycles'),
-('Baller', 'baller2', 40000, 'suvs'),
-('Baller Sport', 'baller3', 60000, 'suvs'),
-('Banshee', 'banshee', 70000, 'sports'),
-('Banshee 900R', 'banshee2', 255000, 'super'),
-('Bati 801', 'bati', 12000, 'motorcycles'),
-('Bati 801RR', 'bati2', 19000, 'motorcycles'),
-('Bestia GTS', 'bestiagts', 55000, 'sports'),
-('BF400', 'bf400', 6500, 'motorcycles'),
-('Bf Injection', 'bfinjection', 16000, 'offroad'),
-('Bifta', 'bifta', 12000, 'offroad'),
-('Bison', 'bison', 45000, 'vans'),
-('Blade', 'blade', 15000, 'muscle'),
-('Blazer', 'blazer', 6500, 'offroad'),
-('Blazer Sport', 'blazer4', 8500, 'offroad'),
-('blazer5', 'blazer5', 1755600, 'offroad'),
-('Blista', 'blista', 8000, 'compacts'),
-('BMX (velo)', 'bmx', 160, 'motorcycles'),
-('Bobcat XL', 'bobcatxl', 32000, 'vans'),
-('Brawler', 'brawler', 45000, 'offroad'),
-('Brioso R/A', 'brioso', 18000, 'compacts'),
-('Btype', 'btype', 62000, 'sportsclassics'),
-('Btype Hotroad', 'btype2', 155000, 'sportsclassics'),
-('Btype Luxe', 'btype3', 85000, 'sportsclassics'),
-('Buccaneer', 'buccaneer', 18000, 'muscle'),
-('Buccaneer Rider', 'buccaneer2', 24000, 'muscle'),
-('Buffalo', 'buffalo', 12000, 'sports'),
-('Buffalo S', 'buffalo2', 20000, 'sports'),
-('Bullet', 'bullet', 90000, 'super'),
-('Burrito', 'burrito3', 19000, 'vans'),
-('Camper', 'camper', 42000, 'vans'),
-('camry18', 'CAMRY18', 25000, 'import'),
-('Carbonizzare', 'carbonizzare', 75000, 'sports'),
-('Carbon RS', 'carbonrs', 18000, 'motorcycles'),
-('Casco', 'casco', 30000, 'sportsclassics'),
-('castrolsupra', 'castrolsupra', 20000, 'import'),
-('Cavalcade', 'cavalcade2', 55000, 'suvs'),
-('Cheetah', 'cheetah', 375000, 'super'),
-('Chimera', 'chimera', 38000, 'motorcycles'),
-('Chino', 'chino', 15000, 'muscle'),
-('Chino Luxe', 'chino2', 19000, 'muscle'),
-('Cliffhanger', 'cliffhanger', 9500, 'motorcycles'),
-('Cognoscenti Cabrio', 'cogcabrio', 55000, 'coupes'),
-('Cognoscenti', 'cognoscenti', 55000, 'sedans'),
-('Comet', 'comet2', 65000, 'sports'),
-('Comet 5', 'comet5', 1145000, 'sports'),
-('Contender', 'contender', 70000, 'suvs'),
-('Coquette', 'coquette', 65000, 'sports'),
-('Coquette Classic', 'coquette2', 40000, 'sportsclassics'),
-('Coquette BlackFin', 'coquette3', 55000, 'muscle'),
-('Cruiser (velo)', 'cruiser', 510, 'motorcycles'),
-('Cyclone', 'cyclone', 1890000, 'super'),
-('Daemon', 'daemon', 11500, 'motorcycles'),
-('Daemon High', 'daemon2', 13500, 'motorcycles'),
-('Defiler', 'defiler', 9800, 'motorcycles'),
-('Deluxo', 'deluxo', 4721500, 'sportsclassics'),
-('Dodge EMS FiveM', 'dodgeEMS', 25000, 'métier'),
-('Dominator', 'dominator', 35000, 'muscle'),
-('Double T', 'double', 28000, 'motorcycles'),
-('Dubsta', 'dubsta', 45000, 'suvs'),
-('Dubsta Luxuary', 'dubsta2', 60000, 'suvs'),
-('Bubsta 6x6', 'dubsta3', 120000, 'offroad'),
-('Dukes', 'dukes', 28000, 'muscle'),
-('Dune Buggy', 'dune', 8000, 'offroad'),
-('e63sf', 'E63SF', 60000, 'import'),
-('Elegy', 'elegy2', 38500, 'sports'),
-('Emperor', 'emperor', 8500, 'sedans'),
-('Enduro', 'enduro', 5500, 'motorcycles'),
-('Entity XF', 'entityxf', 425000, 'super'),
-('Esskey', 'esskey', 4200, 'motorcycles'),
-('Exemplar', 'exemplar', 32000, 'coupes'),
-('f450towtruk', 'f450towtruk', 40000, 'métier'),
-('F620', 'f620', 40000, 'coupes'),
-('Faction', 'faction', 20000, 'muscle'),
-('Faction Rider', 'faction2', 30000, 'muscle'),
-('Faction XL', 'faction3', 40000, 'muscle'),
-('Faggio', 'faggio', 1900, 'motorcycles'),
-('Vespa', 'faggio2', 2800, 'motorcycles'),
-('Felon', 'felon', 42000, 'coupes'),
-('Felon GT', 'felon2', 55000, 'coupes'),
-('Feltzer', 'feltzer2', 55000, 'sports'),
-('Stirling GT', 'feltzer3', 65000, 'sportsclassics'),
-('Fixter (velo)', 'fixter', 225, 'motorcycles'),
-('FMJ', 'fmj', 185000, 'super'),
-('Fhantom', 'fq2', 17000, 'suvs'),
-('Fugitive', 'fugitive', 12000, 'sedans'),
-('Furore GT', 'furoregt', 45000, 'sports'),
-('Fusilade', 'fusilade', 40000, 'sports'),
-('Gargoyle', 'gargoyle', 16500, 'motorcycles'),
-('Gauntlet', 'gauntlet', 30000, 'muscle'),
-('Gang Burrito', 'gburrito', 45000, 'vans'),
-('Burrito', 'gburrito2', 29000, 'vans'),
-('gemera', 'gemera', 70000, 'import'),
-('model fivem', 'gle21', 30000, 'import'),
-('Glendale', 'glendale', 6500, 'sedans'),
-('Grabger', 'granger', 50000, 'suvs'),
-('Gresley', 'gresley', 47500, 'suvs'),
-('GT 500', 'gt500', 785000, 'sportsclassics'),
-('Guardian', 'guardian', 45000, 'offroad'),
-('Hakuchou', 'hakuchou', 31000, 'motorcycles'),
-('Hakuchou Sport', 'hakuchou2', 55000, 'motorcycles'),
-('Hermes', 'hermes', 535000, 'muscle'),
-('Hexer', 'hexer', 12000, 'motorcycles'),
-('Hotknife', 'hotknife', 125000, 'muscle'),
-('Huntley S', 'huntley', 40000, 'suvs'),
-('Hustler', 'hustler', 625000, 'muscle'),
-('Infernus', 'infernus', 180000, 'super'),
-('Innovation', 'innovation', 23500, 'motorcycles'),
-('EMSinterceptor', 'intems', 20000, 'import'),
-('Intruder', 'intruder', 7500, 'sedans'),
-('Issi', 'issi2', 10000, 'compacts'),
-('Jackal', 'jackal', 38000, 'coupes'),
-('Jester', 'jester', 65000, 'sports'),
-('Jester(Racecar)', 'jester2', 135000, 'sports'),
-('Journey', 'journey', 6500, 'vans'),
-('Kamacho', 'kamacho', 345000, 'offroad'),
-('Khamelion', 'khamelion', 38000, 'sports'),
-('ktmx', 'KTMX', 20000, 'import'),
-('Kuruma', 'kuruma', 30000, 'sports'),
-('Aperta', 'laferrari17', 150000, 'import'),
-('Landstalker', 'landstalker', 35000, 'suvs'),
-('RE-7B', 'le7b', 325000, 'super'),
-('Lynx', 'lynx', 40000, 'sports'),
-('m6prior', 'm6prior', 150000, 'import'),
-('Mamba', 'mamba', 70000, 'sports'),
-('Manana', 'manana', 12800, 'sportsclassics'),
-('Manchez', 'manchez', 5300, 'motorcycles'),
-('Massacro', 'massacro', 65000, 'sports'),
-('Massacro(Racecar)', 'massacro2', 130000, 'sports'),
-('Mesa', 'mesa', 16000, 'suvs'),
-('Mesa Trail', 'mesa3', 40000, 'suvs'),
-('Minivan', 'minivan', 13000, 'vans'),
-('Monroe', 'monroe', 55000, 'sportsclassics'),
-('The Liberator', 'monster', 210000, 'offroad'),
-('Moonbeam', 'moonbeam', 18000, 'vans'),
-('Moonbeam Rider', 'moonbeam2', 35000, 'vans'),
-('Nemesis', 'nemesis', 5800, 'motorcycles'),
-('Neon', 'neon', 1500000, 'sports'),
-('Nightblade', 'nightblade', 35000, 'motorcycles'),
-('Nightshade', 'nightshade', 65000, 'muscle'),
-('9F', 'ninef', 65000, 'sports'),
-('9F Cabrio', 'ninef2', 80000, 'sports'),
-('BMWi422spe', 'ocni422spe', 40000, 'import'),
-('Omnis', 'omnis', 35000, 'sports'),
-('Oppressor', 'oppressor', 3524500, 'super'),
-('Oracle XS', 'oracle2', 35000, 'coupes'),
-('Osiris', 'osiris', 160000, 'super'),
-('Panto', 'panto', 10000, 'compacts'),
-('Paradise', 'paradise', 19000, 'vans'),
-('Pariah', 'pariah', 1420000, 'sports'),
-('Patriot', 'patriot', 55000, 'suvs'),
-('PCJ-600', 'pcj', 6200, 'motorcycles'),
-('Penumbra', 'penumbra', 28000, 'sports'),
-('Pfister', 'pfister811', 85000, 'super'),
-('Phoenix', 'phoenix', 12500, 'muscle'),
-('Picador', 'picador', 18000, 'muscle'),
-('Pigalle', 'pigalle', 20000, 'sportsclassics'),
-('2018taurusrb', 'police3', 30000, 'métier'),
-('pollp770', 'pollp770', 100000, 'métier'),
-('Prairie', 'prairie', 12000, 'compacts'),
-('Premier', 'premier', 8000, 'sedans'),
-('Primo Custom', 'primo2', 14000, 'sedans'),
-('X80 Proto', 'prototipo', 2500000, 'super'),
-('q820', 'q820', 50000, 'import'),
-('Radius', 'radi', 29000, 'suvs'),
-('raiden', 'raiden', 1375000, 'sports'),
-('Rapid GT', 'rapidgt', 35000, 'sports'),
-('Rapid GT Convertible', 'rapidgt2', 45000, 'sports'),
-('Rapid GT3', 'rapidgt3', 885000, 'sportsclassics'),
-('Reaper', 'reaper', 150000, 'super'),
-('Rebel', 'rebel2', 35000, 'offroad'),
-('Regina', 'regina', 5000, 'sedans'),
-('Retinue', 'retinue', 615000, 'sportsclassics'),
-('Revolter', 'revolter', 1610000, 'sports'),
-('riata', 'riata', 380000, 'offroad'),
-('Rocoto', 'rocoto', 45000, 'suvs'),
-('rs52021', 'RS52021', 50000, 'import'),
-('RS6', 'rs62', 150000, 'import'),
-('Ruffian', 'ruffian', 6800, 'motorcycles'),
-('Rumpo', 'rumpo', 15000, 'vans'),
-('Rumpo Trail', 'rumpo3', 19500, 'vans'),
-('Sabre Turbo', 'sabregt', 20000, 'muscle'),
-('Sabre GT', 'sabregt2', 25000, 'muscle'),
-('Sanchez', 'sanchez', 5300, 'motorcycles'),
-('Sanchez Sport', 'sanchez2', 5300, 'motorcycles'),
-('Sanctus', 'sanctus', 25000, 'motorcycles'),
-('Sandking', 'sandking', 55000, 'offroad'),
-('Savestra', 'savestra', 990000, 'sportsclassics'),
-('SC 1', 'sc1', 1603000, 'super'),
-('Schafter', 'schafter2', 25000, 'sedans'),
-('Schafter V12', 'schafter3', 50000, 'sports'),
-('Scorcher (velo)', 'scorcher', 280, 'motorcycles'),
-('Seminole', 'seminole', 25000, 'suvs'),
-('Sentinel', 'sentinel', 32000, 'coupes'),
-('Sentinel XS', 'sentinel2', 40000, 'coupes'),
-('Sentinel3', 'sentinel3', 650000, 'sports'),
-('Seven 70', 'seven70', 39500, 'sports'),
-('ETR1', 'sheava', 220000, 'super'),
-('Sheriff Premier', 'SHERIFF', 25000, 'métier'),
-('Shotaro Concept', 'shotaro', 320000, 'motorcycles'),
-('Slam Van', 'slamvan3', 11500, 'muscle'),
-('Sovereign', 'sovereign', 22000, 'motorcycles'),
-('Stinger', 'stinger', 80000, 'sportsclassics'),
-('Stinger GT', 'stingergt', 75000, 'sportsclassics'),
-('Streiter', 'streiter', 500000, 'sports'),
-('Stretch', 'stretch', 90000, 'sedans'),
-('Stromberg', 'stromberg', 3185350, 'sports'),
-('Sultan', 'sultan', 15000, 'sports'),
-('Sultan RS', 'sultanrs', 65000, 'super'),
-('Super Diamond', 'superd', 130000, 'sedans'),
-('Surano', 'surano', 50000, 'sports'),
-('Surfer', 'surfer', 12000, 'vans'),
-('T20', 't20', 300000, 'super'),
-('Tailgater', 'tailgater', 30000, 'sedans'),
-('Tampa', 'tampa', 16000, 'muscle'),
-('Drift Tampa', 'tampa2', 80000, 'sports'),
-('taycan', 'taycan', 125000, 'import'),
-('teslapd', 'teslapd', 125000, 'import'),
-('Thrust', 'thrust', 24000, 'motorcycles'),
-('Tri bike (velo)', 'tribike3', 520, 'motorcycles'),
-('Trophy Truck', 'trophytruck', 60000, 'offroad'),
-('Trophy Truck Limited', 'trophytruck2', 80000, 'offroad'),
-('Tropos', 'tropos', 40000, 'sports'),
-('Turismo R', 'turismor', 350000, 'super'),
-('Tyrus', 'tyrus', 600000, 'super'),
-('Vacca', 'vacca', 120000, 'super'),
-('Vader', 'vader', 7200, 'motorcycles'),
-('Verlierer', 'verlierer2', 70000, 'sports'),
-('Vigero', 'vigero', 12500, 'muscle'),
-('Virgo', 'virgo', 14000, 'muscle'),
-('Viseris', 'viseris', 875000, 'sportsclassics'),
-('Visione', 'visione', 2250000, 'super'),
-('Voltic', 'voltic', 90000, 'super'),
-('Voltic 2', 'voltic2', 3830400, 'super'),
-('Voodoo', 'voodoo', 7200, 'muscle'),
-('Vortex', 'vortex', 9800, 'motorcycles'),
-('Warrener', 'warrener', 4000, 'sedans'),
-('Washington', 'washington', 9000, 'sedans'),
-('Windsor', 'windsor', 95000, 'coupes'),
-('Windsor Drop', 'windsor2', 125000, 'coupes'),
-('Woflsbane', 'wolfsbane', 9000, 'motorcycles'),
-('XLS', 'xls', 32000, 'suvs'),
-('xperia', 'XPERIA38', 150, 'import'),
-('Yosemite', 'yosemite', 485000, 'muscle'),
-('Youga', 'youga', 10800, 'vans'),
-('Youga Luxuary', 'youga2', 14500, 'vans'),
-('Z190', 'z190', 900000, 'sportsclassics'),
-('Zentorno', 'zentorno', 1500000, 'super'),
-('Zion', 'zion', 36000, 'coupes'),
-('Zion Cabrio', 'zion2', 45000, 'coupes'),
-('Zombie', 'zombiea', 9500, 'motorcycles'),
-('Zombie Luxuary', 'zombieb', 12000, 'motorcycles'),
-('Z-Type', 'ztype', 220000, 'sportsclassics');
-
--- --------------------------------------------------------
-
---
--- Structure de la table `vehicle_keys`
---
-
-CREATE TABLE `vehicle_keys` (
-  `id` int(11) NOT NULL,
-  `identifier` longtext NOT NULL,
-  `plate` varchar(12) NOT NULL,
-  `state` longtext DEFAULT NULL,
-  `label` longtext DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
--- --------------------------------------------------------
-
---
--- Structure de la table `whitelist`
---
-
-CREATE TABLE `whitelist` (
-  `identifier` varchar(46) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3 COLLATE=utf8mb3_general_ci;
-
 --
 -- Index pour les tables déchargées
 --
@@ -1143,63 +639,16 @@ ALTER TABLE `addon_account_data`
   ADD KEY `index_addon_account_data_account_name` (`account_name`);
 
 --
--- Index pour la table `addon_inventory`
---
-ALTER TABLE `addon_inventory`
-  ADD PRIMARY KEY (`name`);
-
---
--- Index pour la table `addon_inventory_items`
---
-ALTER TABLE `addon_inventory_items`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `index_addon_inventory_items_inventory_name_name` (`inventory_name`,`name`),
-  ADD KEY `index_addon_inventory_items_inventory_name_name_owner` (`inventory_name`,`name`,`owner`),
-  ADD KEY `index_addon_inventory_inventory_name` (`inventory_name`);
-
---
--- Index pour la table `baninfo`
---
-ALTER TABLE `baninfo`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `banking`
 --
 ALTER TABLE `banking`
   ADD PRIMARY KEY (`ID`);
 
 --
--- Index pour la table `banlist`
---
-ALTER TABLE `banlist`
-  ADD PRIMARY KEY (`license`);
-
---
--- Index pour la table `banlisthistory`
---
-ALTER TABLE `banlisthistory`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Index pour la table `billing`
 --
 ALTER TABLE `billing`
   ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `datastore`
---
-ALTER TABLE `datastore`
-  ADD PRIMARY KEY (`name`);
-
---
--- Index pour la table `datastore_data`
---
-ALTER TABLE `datastore_data`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `index_datastore_data_name_owner` (`name`,`owner`),
-  ADD KEY `index_datastore_data_name` (`name`);
 
 --
 -- Index pour la table `fine_types`
@@ -1242,7 +691,7 @@ ALTER TABLE `owned_shops`
 -- Index pour la table `owned_vehicles`
 --
 ALTER TABLE `owned_vehicles`
-  ADD PRIMARY KEY (`plate`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `ox_doorlock`
@@ -1314,24 +763,6 @@ ALTER TABLE `user_licenses`
   ADD PRIMARY KEY (`id`);
 
 --
--- Index pour la table `vehicles`
---
-ALTER TABLE `vehicles`
-  ADD PRIMARY KEY (`model`);
-
---
--- Index pour la table `vehicle_keys`
---
-ALTER TABLE `vehicle_keys`
-  ADD PRIMARY KEY (`id`);
-
---
--- Index pour la table `whitelist`
---
-ALTER TABLE `whitelist`
-  ADD PRIMARY KEY (`identifier`);
-
---
 -- AUTO_INCREMENT pour les tables déchargées
 --
 
@@ -1342,39 +773,15 @@ ALTER TABLE `addon_account_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `addon_inventory_items`
---
-ALTER TABLE `addon_inventory_items`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `baninfo`
---
-ALTER TABLE `baninfo`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `banking`
 --
 ALTER TABLE `banking`
   MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT pour la table `banlisthistory`
---
-ALTER TABLE `banlisthistory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT pour la table `billing`
 --
 ALTER TABLE `billing`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `datastore_data`
---
-ALTER TABLE `datastore_data`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
@@ -1394,6 +801,12 @@ ALTER TABLE `job_grades`
 --
 ALTER TABLE `owned_shops`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT pour la table `owned_vehicles`
+--
+ALTER TABLE `owned_vehicles`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT pour la table `ox_doorlock`
@@ -1447,12 +860,6 @@ ALTER TABLE `user_contacts`
 -- AUTO_INCREMENT pour la table `user_licenses`
 --
 ALTER TABLE `user_licenses`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT pour la table `vehicle_keys`
---
-ALTER TABLE `vehicle_keys`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
