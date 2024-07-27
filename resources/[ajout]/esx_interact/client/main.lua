@@ -721,6 +721,8 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "unzip",
 		icon = Config.search_img,
+		items = 'cutter',
+		anyItem = true,
 		label = "unzip",
 		num = 3,
 		distance = 0.7
@@ -730,7 +732,7 @@ exports.ox_target:addGlobalPlayer({
 		items = 'lockpick',
 		anyItem = true,
 		icon = Config.handcuff_img,
-		label = "Casser les menottes",
+		label = "Crochetter les menottes",
 		num = 3,
 		distance = 0.7
 	},
@@ -771,28 +773,6 @@ exports.ox_target:addGlobalVehicle({
 		},
         distance = 1.5
 	},
-	{
-		event = "esx_mechanicjob:crochetter",
-		items = 'chalumeau',
-		anyItem = true,
-		icon = Config.vehplate_img,
-		label = 'Déverouiller les portes',
-		num = 3,
-        groups = {
-			['police'] = 0
-		},
-        distance = 1.5
-	},
-	{
-		event = "esx_policejob:vehicleimpound",
-		icon = Config.vehplate_img,
-		label = 'Mettre en fourrière',
-		num = 4,
-        groups = {
-			['police'] = 0
-		},
-        distance = 1.5
-	},
 -- Mechanic
 	{
 		event = "esx_mechanicjob:clean",
@@ -827,14 +807,15 @@ exports.ox_target:addGlobalVehicle({
         distance = 1.5
 	},
 	{
-		event = "esx_mechanicjob:crochetter",
+		event = "ox_carkeys:LockPick2",
 		icon = Config.vehplate_img,
-		items = 'chalumeau',
+		items = 'lockpick',
 		anyItem = true,
-		label = 'Crochetter le véhicule',
+		label = 'Déverouiller les portes',
 		num = 4,
         groups = {
-			['mechanic'] = 0
+			['mechanic'] = 0,
+			['police'] = 0
 		},
         distance = 1.5
 	},
@@ -844,8 +825,18 @@ exports.ox_target:addGlobalVehicle({
 		label = 'Mettre en fourrière',
 		num = 5,
         groups = {
-			['mechanic'] = 0
+			['mechanic'] = 0,
+			['police'] = 0
 		},
+        distance = 1.5
+	},
+	{
+		event = "ox_carkeys:LockPick",
+		icon = Config.vehplate_img,
+		items = 'lockpick',
+		anyItem = true,
+		label = 'Crochetter',
+		num = 6,
         distance = 1.5
 	},
 })

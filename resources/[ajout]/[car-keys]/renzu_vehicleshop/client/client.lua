@@ -1400,6 +1400,7 @@ AddEventHandler('renzu_vehicleshop:buyvehicle', function(model,shop,payment,notr
 end)
 
 function BuyVehicle(data,notregister)
+    local playerPed = GetPlayerPed(-1)
     local ped = PlayerPedId()
     local props = nil
     local veh = nil
@@ -1445,17 +1446,13 @@ function BuyVehicle(data,notregister)
                         SetVehicleProp(veh, props)
                         DoScreenFadeIn(111)
                         NetworkFadeInEntity(veh,1)
-						print("1234")
-                        TriggerServerEvent('Alf-Carkeys:createKey', localVehPlate)
-                        print("vehicleProps")        
                     end
                 end
-
+				TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
                 LastVehicleFromGarage = nil
                 CloseNui()
                 ShowNotification("Purchase Success: Plate: "..props.plate.."")
                 SetEntityAlpha(v, 255, false)
-                TaskWarpPedIntoVehicle(PlayerPedId(), veh, -1)
                 i = 0
                 min = 0
                 max = 10
@@ -1479,10 +1476,21 @@ function BuyVehicle(data,notregister)
             CloseNui()
             ReqAndDelete(v)
         end
+		BuyVehiclezeezze()
         DoScreenFadeIn(1000)
-    end,VehicleShop[data.shop].plateprefix or false)
-    Wait(3000)
-    DoScreenFadeIn(1000)
+        end,VehicleShop[data.shop].plateprefix or false)
+        Wait(3000)
+        DoScreenFadeIn(1000)
+end
+
+function BuyVehiclezeezze()
+    local playerPed = GetPlayerPed(-1)
+	local vehicle = GetVehiclePedIsIn(playerPed, false)
+	local vehicleName = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
+    local localVehId = GetVehiclePedIsIn(GetPlayerPed(-1), false)
+    local localVehPlate = GetVehicleNumberPlateText(localVehId)
+    print("vehicleName", json.encode(vehicleName))
+    TriggerServerEvent('ox_carkeys:KeyOnBuy', localVehPlate, vehicleName) 
 end
 
 RegisterNUICallback(

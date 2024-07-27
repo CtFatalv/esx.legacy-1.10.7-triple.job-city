@@ -1,4 +1,13 @@
 return {
+	['carkeys'] = {
+		label = 'Clé de voiture',
+		weight = 5,
+		stack = false,
+		client = {
+			event = 'ox_carkeys:carkeys'
+		}
+	},
+
 	['herse'] = {
 		label = 'Herse',
         weight = 100,
