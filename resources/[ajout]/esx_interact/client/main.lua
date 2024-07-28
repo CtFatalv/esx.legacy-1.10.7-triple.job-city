@@ -592,7 +592,7 @@ exports.ox_target:addGlobalPlayer({
 	{
 		event = "unhandcuff",
 		icon = Config.handcuff_img,
-		items = 'clemeotte',
+		items = 'clemenotte',
 		anyItem = true,
 		label = "Démenotter",
 		num = 3,
