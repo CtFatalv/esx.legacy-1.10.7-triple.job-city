@@ -28,10 +28,10 @@ BikerCocaine = {
             --"table_equipment"
         },
         upgrade = {
-           -- "set_up",
+            --"set_up",
             --"equipment_upgrade",
-           -- "coke_press_upgrade",
-           -- "production_upgrade",
+            --"coke_press_upgrade",
+            --"production_upgrade",
             --"table_equipment_upgrade"
         },
 
