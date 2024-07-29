@@ -19,13 +19,6 @@ Config.CustomImgColumn = 'imglink' -- db column name
 -- Config.use_renzu_vehthumb -- Config.CustomImg must be false
 Config.use_renzu_vehthumb = false -- use vehicle thumb generation script
 
--- CARKEYS -- -- you need to replace the event
-Config.Carkeys = function(props)
-    print("Vehicule vendu")
-    print(props)
-   -- TriggerServerEvent('esx_givecarkeys:setVehicleOwnedPlayerId', GetPlayerServerId(closestPlayer), props)
-   -- TriggerClientEvent('vehiclekeys:client:SetOwner',source,plate) -- THIS EVENT IS QBCORE CAR KEYS!, replace the event name to your carkeys event
-end
 -- CARKEYS --
 --EXTRA
 Config.UseArenaSpawn = false -- will use custom location for spawning vehicle in quickpick == false

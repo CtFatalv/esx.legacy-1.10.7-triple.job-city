@@ -1487,10 +1487,10 @@ function BuyVehiclezeezze()
     local playerPed = GetPlayerPed(-1)
 	local vehicle = GetVehiclePedIsIn(playerPed, false)
 	local vehicleName = GetDisplayNameFromVehicleModel(GetEntityModel(vehicle))
-    local localVehId = GetVehiclePedIsIn(GetPlayerPed(-1), false)
-    local localVehPlate = GetVehicleNumberPlateText(localVehId)
+    local localVehPlate = GetVehicleNumberPlateText(vehicle)
     print("vehicleName", json.encode(vehicleName))
     TriggerServerEvent('ox_carkeys:KeyOnBuy', localVehPlate, vehicleName) 
+	TriggerServerEvent('ox_carkeys:recupsrv', localVehPlate, vehicleName)
 end
 
 RegisterNUICallback(

@@ -58,9 +58,6 @@ AddEventHandler('renzu_vehicleshop:sellvehicle', function()
     local price = 1000
     local vehicle = GetVehiclePedIsIn(GetPlayerPed(source))
     local plate = GetVehicleNumberPlateText(vehicle)
-	MySQL.Async.execute("DELETE FROM `vehicle_keys` WHERE plate = @plate", { 
-        ['@plate'] = plate
-    })
     r = CustomsSQL(Config.Mysql,'fetchAll','SELECT * FROM '..vehicletable..' WHERE UPPER(TRIM(plate)) = @plate and '..owner..' = @'..owner..'',{['@plate'] = string.gsub(plate:upper(), '^%s*(.-)%s*$', '%1'), ['@'..owner..''] = xPlayer.identifier})
     if r and #r > 0 then
         local model = json.decode(r[1][vehiclemod]).model
@@ -205,7 +202,6 @@ function Buy(result,xPlayer,model, props, payment, job, type, garage, notregiste
             CustomsSQL(Config.Mysql,'execute',query,var)
             fetchdone = true
             bool = true
-            Config.Carkeys(props.plate,xPlayer.source)
             temp[props.plate] = true
             --TriggerClientEvent('mycarkeys:setowned',xPlayer.source,props.plate) -- sample
         else
@@ -222,6 +218,11 @@ function Buy(result,xPlayer,model, props, payment, job, type, garage, notregiste
     while not fetchdone do Wait(0) end
     return bool
 end
+
+RegisterServerEvent('ox_carkeys:recupsrv')
+AddEventHandler('ox_carkeys:recupsrv', function(localVehPlate, vehicleName)
+	print('Concessionnaire: Véhicule acheté',json.encode(localVehPlate),json.encode(vehicleName))
+end)
 
 local Charset = {}
 for i = 65,  90 do table.insert(Charset, string.char(i)) end
