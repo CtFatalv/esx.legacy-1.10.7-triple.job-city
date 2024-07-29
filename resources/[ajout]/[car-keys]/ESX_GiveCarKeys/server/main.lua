@@ -36,12 +36,6 @@ ESX.RegisterServerCallback('esx_givecarkeys:requestPlayerCars', function(source,
 	)
 end)
 
-RegisterServerEvent('esx_givecarkeys:frommenu')
-AddEventHandler('esx_givecarkeys:frommenu', function ()
-	TriggerClientEvent('esx_givecarkeys:keys', source)
-end)
-
-
 RegisterServerEvent('esx_givecarkeys:setVehicleOwnedPlayerId')
 AddEventHandler('esx_givecarkeys:setVehicleOwnedPlayerId', function (playerId, vehicleProps)
 	local xPlayer = ESX.GetPlayerFromId(playerId)

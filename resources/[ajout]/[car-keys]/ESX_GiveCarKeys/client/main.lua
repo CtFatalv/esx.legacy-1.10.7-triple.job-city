@@ -2,9 +2,7 @@ ESX = exports["es_extended"]:getSharedObject()
 
 RegisterNetEvent("esx_givecarkeys:keys")
 AddEventHandler("esx_givecarkeys:keys", function()
-
-giveCarKeys()
-
+	giveCarKeys()
 end)
 
 function giveCarKeys()
