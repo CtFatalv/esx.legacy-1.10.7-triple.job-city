@@ -57,20 +57,6 @@ AddEventHandler('esx_givecarkeys:setVehicleOwnedPlayerId', function (playerId, v
 
 	end)
 end)
-RegisterServerEvent('esx_givecarkeys:setVehicleOwnedPlayerId')
-AddEventHandler('esx_givecarkeys:setVehicleOwnedPlayerId', function (playerId, vehicleProps)
-	local xPlayer = ESX.GetPlayerFromId(playerId)
-
-	MySQL.Async.execute('UPDATE vehicle_keys SET identifier=@identifier WHERE plate=@plate',
-	{
-		['@identifier']   = xPlayer.identifier,
-		['@plate']   = vehicleProps.plate
-	},
-	function (rowsChanged)
-		TriggerClientEvent('esx:showNotification', playerId, 'You have got a new car with plate ~g~' ..vehicleProps.plate..'!', vehicleProps.plate)
-
-	end)
-end)
 
 function trim(s)
     if s ~= nil then
