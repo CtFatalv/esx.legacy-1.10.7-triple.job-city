@@ -1066,122 +1066,202 @@ return {
 	},
     -- SHOP PLAYER
     ['shop01'] = {
-      label = 'Epicerie N°1',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°1',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop01'}
+        },
     },
     
     ['shop02'] = {
-      label = 'Epicerie N°2',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°2',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop02'}
+        },
     },
     
     ['shop03'] = {
-      label = 'Epicerie N°3',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°3',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop03'}
+        },
     },
     
     ['shop04'] = {
-      label = 'Epicerie N°4',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°4',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop04'}
+        },
     },
     
     ['shop05'] = {
-      label = 'Epicerie N°5',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°5',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop05'}
+        },
     },
     
     ['shop06'] = {
-      label = 'Epicerie N°6',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°6',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop06'}
+        },
     },
     
     ['shop07'] = {
-      label = 'Epicerie N°7',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°7',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop07'}
+        },
     },
     
     ['shop08'] = {
-      label = 'Epicerie N°8',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°8',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop08'}
+        },
     },
     
     ['shop09'] = {
-      label = 'Epicerie N°9',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°9',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop09'}
+        },
     },
     
     ['shop10'] = {
-      label = 'Epicerie N°10',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°10',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop10'}
+        },
     },
     
     ['shop11'] = {
-      label = 'Epicerie N°11',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°11',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop11'}
+        },
     },
     
     ['shop12'] = {
-      label = 'Epicerie N°12',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°12',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop12'}
+        },
     },
     
     ['shop13'] = {
-      label = 'Epicerie N°13',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°13',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop13'}
+        },
     },
     
     ['shop14'] = {
-      label = 'Epicerie N°14',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°14',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop14'}
+        },
     },
     
     ['shop15'] = {
-      label = 'Epicerie N°15',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°15',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop15'}
+        },
     },
     
     ['shop16'] = {
-      label = 'Epicerie N°16',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°16',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop16'}
+        },
     },
     
     ['shop17'] = {
-      label = 'Epicerie N°17',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°17',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop17'}
+        },
     },
     
     ['shop18'] = {
-      label = 'Epicerie N°18',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°18',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop18'}
+        },
     },
     
     ['shop19'] = {
-      label = 'Epicerie N°19',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°19',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop19'}
+        },
     },
     
     ['shop20'] = {
-      label = 'Epicerie N°20',
-		stack = false,
-		weight = 0,
+        label = 'Epicerie N°20',
+        stack = false,
+        weight = 0,
+        client = {
+            event = 'ox_shops:objet',
+            args = {'shop20'}
+        },
     },
 }
