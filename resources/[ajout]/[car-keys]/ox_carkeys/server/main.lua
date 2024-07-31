@@ -67,3 +67,10 @@ RegisterServerEvent('ox_carkeys:sendems')
 AddEventHandler('ox_carkeys:sendems', function(coords)
     TriggerClientEvent('ox_carkeys:sendems2', -1, coords)
 end)
+
+RegisterServerEvent('ox_carkeys:remove')
+AddEventHandler('ox_carkeys:remove', function()
+	_source = source
+    xPlayer = ESX.GetPlayerFromId(_source)
+	xPlayer.removeInventoryItem('lockpick', 1)
+end)

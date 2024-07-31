@@ -183,6 +183,7 @@ function LockPick()
                     ClearPedTasks(ped)
                     SendDistressSignal2()
                     SetVehicleDoorsLocked(closet, 1)
+                    TriggerServerEvent('ox_carkeys:remove')
                     if math.random() < v.alarmProbability then
                         SetVehicleAlarmTimeLeft(closet, v.alarmTime)
                     end
@@ -191,6 +192,7 @@ function LockPick()
                     end
                 else
                     ClearPedTasks(ped)
+                    TriggerServerEvent('ox_carkeys:remove')
                     SendDistressSignal2()
                     TriggerEvent('ox_carkeys:Notification', locale('LockPickTitle'), locale('LockPickFail'), 'error')
                 end
@@ -215,6 +217,7 @@ function LockPick()
                     }) then
                     SendDistressSignal2()
                     SetVehicleDoorsLocked(closet, 1)
+                    TriggerServerEvent('ox_carkeys:remove')
                     if math.random() < v.alarmProbability then
                         SetVehicleAlarmTimeLeft(closet, v.alarmTime)
                     end
@@ -226,11 +229,11 @@ function LockPick()
                     if math.random() < v.alarmProbability then
                         SetVehicleAlarmTimeLeft(closet, v.alarmTime)
                     end
+                    TriggerServerEvent('ox_carkeys:remove')
                     TriggerEvent('ox_carkeys:Notification', locale('LockPickTitle'), locale('LockPickFail'), 'error')
                 end
             end
         else
-        			print("zezeze")
             TriggerEvent('ox_carkeys:Notification', locale('LockPickTitle'), locale('nocarcerca'), 'error')
         end
     end
