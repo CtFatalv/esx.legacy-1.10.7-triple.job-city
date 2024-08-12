@@ -1064,6 +1064,236 @@ return {
 		stack = true,
 		weight = 10,
 	},
+	-- Chasse Catégorie 1
+    ['plume_faucon'] = {
+        label = 'Plume de Faucon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_faucon'] = {
+        label = 'Viande de Faucon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['plume_cormoran'] = {
+        label = 'Plume de Cormoran',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_cormoran'] = {
+        label = 'Viande de Cormoran',
+        weight = 0,
+        stack = true,
+    },
+
+    ['plume_corbeau'] = {
+        label = 'Plume de Corbeau',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_corbeau'] = {
+        label = 'Viande de Corbeau',
+        weight = 0,
+        stack = true,
+    },
+
+    ['plume_pigeon'] = {
+        label = 'Plume de Pigeon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_pigeon'] = {
+        label = 'Viande de Pigeon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['plume_mouette'] = {
+        label = 'Plume de Mouette',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_mouette'] = {
+        label = 'Viande de Mouette',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_rat'] = {
+        label = 'Peau de Rat',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_rat'] = {
+        label = 'Viande de Rat',
+        weight = 0,
+        stack = true,
+    },
+
+    ['plume_poule'] = {
+        label = 'Plume de Poule',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_poule'] = {
+        label = 'Viande de Poule',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_lapin'] = {
+        label = 'Peau de Lapin',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_lapin'] = {
+        label = 'Viande de Lapin',
+        weight = 0,
+        stack = true,
+    },
+
+    -- Categorie 2
+    ['peau_coyote'] = {
+        label = 'Peau de Coyote',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_puma'] = {
+        label = 'Peau de Puma',
+        weight = 0,
+        stack = true,
+    },
+
+    ['croc_puma'] = {
+        label = 'Croc de Puma',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_cochon'] = {
+        label = 'Peau de Cochon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_cochon'] = {
+        label = 'Viande de Cochon',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_sanglier'] = {
+        label = 'Peau de Sanglier',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_sanglier'] = {
+        label = 'Viande de Sanglier',
+        weight = 0,
+        stack = true,
+    },
+
+    ['defence_sanglier'] = {
+        label = 'Défense de Sanglier',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_vache'] = {
+        label = 'Peau de Vache',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_vache'] = {
+        label = 'Viande de Vache',
+        weight = 0,
+        stack = true,
+    },
+
+    ['corne_vache'] = {
+        label = 'Corne de Vache',
+        weight = 0,
+        stack = true,
+    },
+
+    ['peau_cerf'] = {
+        label = 'Peau de Cerf',
+        weight = 0,
+        stack = true,
+    },
+
+    ['viande_cerf'] = {
+        label = 'Viande de Cerf',
+        weight = 0,
+        stack = true,
+    },
+
+    ['bois_cerf'] = {
+        label = 'Bois de Cerf',
+        weight = 0,
+        stack = true,
+    },
+
+    ['a_c_chickenhawk'] = {
+        label = 'Faucon',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_cormorant'] = {
+        label = 'Cormoran',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_crow'] = {
+        label = 'Corbeau',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_pigeon'] = {
+        label = 'Pigeon',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_seagull'] = {
+        label = 'Mouette',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_rat'] = {
+        label = 'Rat',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_hen'] = {
+        label = 'Poule',
+        weight = 100,
+        stack = true,
+    },
+
+    ['a_c_rabbit_01'] = {
+        label = 'Lapin',
+        weight = 100,
+        stack = true,
+    },
+
     -- SHOP PLAYER
     ['shop01'] = {
         label = 'Epicerie N°1',
