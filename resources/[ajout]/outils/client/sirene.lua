@@ -8,11 +8,11 @@ Citizen.CreateThread(function()
 		if IsPedInAnyVehicle(playerped, false) then	
 			-- Check si le joueurs est conducteur
 			local veh = GetVehiclePedIsUsing(playerped)	
-			local NetId = NetworkGetNetworkIdFromEntity(veh)
 			if GetPedInVehicleSeat(veh, -1) == playerped then
 				-- Check si il est dans un véhicule de police / EMS
 				if GetVehicleClass(veh) == 18 then
 					--DisableControlAction(0, 34, true)
+					local NetId = NetworkGetNetworkIdFromEntity(veh)
 					if IsDisabledControlJustReleased(0, 19) then
 						if sirene == 0 then
 							-- on
