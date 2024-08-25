@@ -759,8 +759,6 @@ exports.ox_target:addGlobalVehicle({
 		icon = Config.outveh_img,
 		label = Config.outveh,
 		num = 1,
-        groups = {
-		},
         distance = 1.5
 	},
 	{
