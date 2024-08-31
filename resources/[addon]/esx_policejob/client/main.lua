@@ -976,3 +976,90 @@ AddEventHandler('esx_policejob:mettreamende', function(player)
 	local closestPlayer, closestDistance = ESX.Game.GetClosestPlayer()
 	OpenFineMenu(closestPlayer)
 end)
+
+blipsPol = {}
+
+AddEventHandler('esx_police:appelrenfort', function(player)
+	print("player", json.encode(player))
+    local playerPed = PlayerPedId()
+    local coords = GetEntityCoords(playerPed)
+    TriggerServerEvent('esx_police:send', coords, player)
+end)
+
+RegisterNetEvent('esx_police:send')
+AddEventHandler('esx_police:send', function(coords, data)
+	print("player", json.encode(data))
+	print("player code", data.code)
+	local codepolice = data.code
+	print("codepolice", codepolice)
+    local player = ESX.GetPlayerData()
+    if HasGroups(Groups) then
+    --if PlayerData.job ~= nil and PlayerData.job.name == 'police' then
+    --if PlayerData.job.name == 'police' then
+        street = GetStreetNameAtCoord(coords.x, coords.y, coords.z)
+        street2 = GetStreetNameFromHashKey(street)
+--		ESX.ShowAdvancedNotification(Config.notify.police_notify_title, Config.notify.police_notify_subtitle, street2, "CHAR_CALL911", 1)
+        PlaySoundFrontend(-1, "Bomb_Disarmed", "GTAO_Speed_Convoy_Soundset", 0)
+
+		blipp = AddBlipForCoord(coords)
+		if codepolice == "code2" then
+        SetBlipSprite(blipp, 58)
+        SetBlipColour(blipp, 3)
+        SetBlipScale(blipp, 1.0)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString('Appel de Renfort')
+        EndTextCommandSetBlipName(blipp)
+        table.insert(blipsPol, blipp)
+        Wait(180000)
+        for i in pairs(blipsPol) do
+			print("ici")
+            RemoveBlip(blipsPol[i])
+            blipsPol[i] = nil
+        end
+		end
+		if codepolice == "code3" then
+        SetBlipSprite(blipp, 58)
+        SetBlipColour(blipp, 47)
+        SetBlipScale(blipp, 1.0)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString('Appel de Renfort')
+        EndTextCommandSetBlipName(blipp)
+        table.insert(blipsPol, blipp)
+        Wait(180000)
+        for i in pairs(blipsPol) do
+			print("ici")
+            RemoveBlip(blipsPol[i])
+            blipsPol[i] = nil
+        end
+		end
+		if codepolice == "code4" then
+        SetBlipSprite(blipp, 58)
+        SetBlipColour(blipp, 1)
+        SetBlipScale(blipp, 1.0)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString('Appel de Renfort')
+        EndTextCommandSetBlipName(blipp)
+        table.insert(blipsPol, blipp)
+        Wait(180000)
+        for i in pairs(blipsPol) do
+			print("ici")
+            RemoveBlip(blipsPol[i])
+            blipsPol[i] = nil
+        end
+		end
+    end
+end)
+  
+function HasGroups(Groups)
+    local Groups = Config.Groups[1]
+    if Groups then
+    for i = 1, #Groups, 1 do
+    local Group = Groups[i]
+        if ESX.PlayerData and ESX.PlayerData.job and ESX.PlayerData.job.name == Group then
+            return true
+        end
+    end
+    else
+        return true
+    end
+end

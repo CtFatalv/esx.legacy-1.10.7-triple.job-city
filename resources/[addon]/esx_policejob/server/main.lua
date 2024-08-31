@@ -281,3 +281,8 @@ AddEventHandler('onResourceStop', function(resource)
 		TriggerEvent('esx_phone:removeNumber', 'police')
 	end
 end)
+
+RegisterServerEvent('esx_police:send')
+AddEventHandler('esx_police:send', function(coords, player)
+    TriggerClientEvent('esx_police:send', -1, coords, player)
+end)
