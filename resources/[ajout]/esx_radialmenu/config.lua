@@ -296,13 +296,44 @@ Config.JobInteractions = {
     ["police"] = {
         {
             id = 'policeinteraction',
+            title = 'Appel de Renfort',
+            icon = 'bullhorn',
+            items = {
+                {
+                    code = 'code2',
+                    title = 'Code 2',
+                    icon = 'child',
+                    type = 'client',
+                    event = 'esx_police:appelrenfort',
+                    shouldClose = true
+                },
+                {
+                    code = 'code3',
+                    title = 'Code 3',
+                    icon = 'child',
+                    type = 'client',
+                    event = 'esx_police:appelrenfort',
+                    shouldClose = true
+                },
+                {
+                    code = 'code4',
+                    title = 'Code 4',
+                    icon = 'child',
+                    type = 'client',
+                    event = 'esx_police:appelrenfort',
+                    shouldClose = true
+                },
+            }
+        },
+        {
+            id = 'policeinteraction',
             title = 'Vérifier une plaque',
             icon = 'tasks',
             type = 'client',
             event = 'esx_policejob:vehicleinfoplate',
             shouldClose = true
-        }
-	},
+        },
+    },
     ["mechanic"] = {
         {
             id = 'mechanicvehiculeinteraction',
