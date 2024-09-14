@@ -543,39 +543,34 @@ return {
 		close = false,
 	},
 
-	['marteaup'] = {
-		label = 'Marteau piqueur',
-		weight = 450,
-		stack = false,
-		close = false,
+	['pioche_normal'] = {
+		label = 'Pioche',
+        weight = 100,
+        stack = false,
 	},
 
-	['meche_casse'] = {
-		label = 'Mêche cassé',
-		weight = 450,
-		stack = true,
-		close = false,
+	['pioche_fer'] = {
+		label = 'Pioche en fer',
+        weight = 100,
+        stack = false,
 	},
 
-	['meche_titane_casser'] = {
-		label = 'Mêche cassé en titane',
-		weight = 450,
-		stack = true,
-		close = false,
+	['pioche_titane'] = {
+		label = 'Pioche en titane',
+        weight = 100,
+        stack = false,
 	},
 
-	['meche_fer'] = {
-		label = 'Mêche en fer',
-		weight = 450,
-		stack = true,
-		close = false,
+	['pioche_cassee_fer'] = {
+		label = 'Pioche cassée en fer',
+        weight = 100,
+        stack = false,
 	},
 
-	['meche_titane'] = {
-		label = 'Mêche en titane',
-		weight = 450,
-		stack = true,
-		close = false,
+	['pioche_cassee_titane'] = {
+		label = 'Pioche cassée en titane',
+        weight = 100,
+        stack = false,
 	},
 
 	['lingotcuivre'] = {
