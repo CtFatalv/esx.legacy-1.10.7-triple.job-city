@@ -20,7 +20,7 @@ Config.Accounts = {
 
 Config.StartingAccountMoney = { bank = 1000 }
 
-Config.StartingInventoryItems = false -- table/false
+Config.StartingInventoryItems = { phone = 1; burger = 10; water = 10; money = 500; bandage = 5 }
 
 Config.DefaultSpawns = { -- If you want to have more spawn positions and select them randomly uncomment commented code or add more locations
     { x = -269.4, y = -955.3, z = 31.2, heading = 205.8 },
